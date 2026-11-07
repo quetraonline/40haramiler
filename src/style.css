@@ -247,3 +247,19 @@ footer span{letter-spacing:.2em}
  .clan-table-wrap{margin:0 9px 12px}
  .clan-table{font-size:10px}
 }
+
+
+/* Compact top-five clan list inside the Ares Server panel */
+.leftcol .clans-panel{margin-top:0;overflow:hidden}
+.clans-panel .section-heading h2{font-size:12px;line-height:1.45;align-items:flex-start}
+.clans-panel .clan-ranking-toolbar{display:grid;grid-template-columns:1fr auto;gap:6px 8px;padding:10px 11px;font-size:9px}
+.clans-panel .clan-ranking-toolbar>span:first-child{grid-column:1/-1;margin:0;color:#d5c59f}
+.clans-panel .clan-ranking-toolbar .btn{grid-column:2;grid-row:2;padding:6px 8px;font-size:8px}
+.clan-mini-list{display:grid;gap:7px;padding:10px}
+.clan-mini-row{display:grid;grid-template-columns:29px minmax(0,1fr);align-items:start;gap:8px;padding:9px;background:#101820;border:1px solid #293a45;border-radius:3px}
+.clan-mini-row.our-clan{background:rgba(158,124,68,.18)!important;border-color:#806b48;box-shadow:inset 3px 0 #d5b171}
+.clan-mini-rank{display:grid;place-items:center;width:27px;height:27px;border:1px solid #75613f;background:#1e2b33;color:#e9c980;font:800 11px Cinzel}
+.clan-mini-details{display:flex;flex-direction:column;gap:4px;min-width:0}
+.clan-mini-details>b{display:flex;align-items:center;flex-wrap:wrap;gap:5px;color:#f0ede5;font-size:10px;overflow-wrap:anywhere}
+.clan-mini-details>b em{font-style:normal;color:#d9b878;font-size:7px;letter-spacing:.1em}
+.clan-mini-details>small{color:#aab7be;font-size:8px;line-height:1.45;overflow-wrap:anywhere}
