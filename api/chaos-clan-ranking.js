@@ -76,14 +76,14 @@ export default async function handler(req, res) {
     });
 
     if (!upstream.ok) {
-      throw new Error(\`Nowa klan sıralaması HTTP \${upstream.status} yanıtı verdi.\`);
+      throw new Error('Nowa klan sıralaması HTTP ' + upstream.status + ' yanıtı verdi.');
     }
 
     const html = await upstream.text();
     const clans = parseClans(html);
 
     if (clans.length !== 10) {
-      throw new Error(\`Kaynak sayfadan ilk 10 klan okunamadı (bulunan: \${clans.length}). Sayfa yapısı değişmiş olabilir.\`);
+      throw new Error('Kaynak sayfadan ilk 10 klan okunamadı (bulunan: ' + clans.length + '). Sayfa yapısı değişmiş olabilir.');
     }
 
     res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
