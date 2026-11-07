@@ -92,9 +92,9 @@ export default async function handler(req, res) {
     const html = await upstream.text();
     const players = parseRows(html);
     if (!players.length) {
-      const debugRows = [...html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)]
+      const debugRows = [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)]
         .slice(0, 12)
-        .map((match) => [...match[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)].map((cell) => clean(cell[1])));
+        .map((match) => [...match[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((cell) => clean(cell[1])));
       console.error('Monthly clan parser found 0 members; source length=' + html.length, debugRows);
       return res.status(502).json({
         error: 'Aylık listede 40HARAMİLER üyeleri bulunamadı veya kaynak tablo biçimi değişmiş olabilir.',
