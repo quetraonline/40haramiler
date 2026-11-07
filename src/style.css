@@ -283,3 +283,30 @@ footer span{letter-spacing:.2em}
  .clan-mini-details>b{font-size:12px}
  .clan-mini-details>small{font-size:9px}
 }
+
+
+/* Monthly 40Haramiler member leaderboard replacing upcoming events */
+.monthly-clan-panel{overflow:hidden}
+.monthly-clan-panel .section-heading h2{font-size:13px;line-height:1.45}
+.monthly-clan-panel .section-heading .muted{margin:7px 0 0;padding:0;font-size:10px}
+.monthly-ranking-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border-bottom:1px solid #293a45;color:#b9c5cc;font-size:9px}
+.monthly-ranking-toolbar>span:first-child{margin-right:auto;color:#e0c38b;font-weight:700}
+.monthly-ranking-toolbar .btn{padding:6px 9px;font-size:8px}
+.monthly-clan-list{display:grid;gap:6px;max-height:540px;overflow:auto;padding:10px}
+.monthly-clan-row{display:grid;grid-template-columns:31px minmax(0,1fr) auto;align-items:center;gap:8px;padding:9px;background:linear-gradient(105deg,#17242d,#0f171e);border:1px solid #354955;border-radius:3px;box-shadow:0 2px 7px #0004}
+.monthly-clan-rank{display:grid;place-items:center;width:29px;height:29px;background:#253743;border:1px solid #a38653;color:#f1d69a;font:800 12px Cinzel}
+.monthly-clan-player{display:flex;flex-direction:column;gap:4px;min-width:0}
+.monthly-clan-player>b{color:#fff5df;font-size:11px;font-weight:800;overflow-wrap:anywhere}
+.monthly-clan-player>small{color:#b7c4ca;font-size:8px;line-height:1.4}
+.monthly-clan-row>strong{color:#f0ce8b;font-size:10px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.monthly-clan-row>strong small{font-size:8px;color:#c9b17e}
+@media(max-width:760px){
+ .monthly-ranking-toolbar{gap:7px}
+ .monthly-ranking-toolbar>span:first-child{width:100%;margin:0}
+ .monthly-ranking-toolbar .btn{margin-left:auto}
+ .monthly-clan-list{max-height:460px;padding:8px}
+ .monthly-clan-row{grid-template-columns:28px minmax(0,1fr) auto;gap:7px;padding:8px}
+ .monthly-clan-rank{width:27px;height:27px;font-size:11px}
+ .monthly-clan-player>b{font-size:10px}
+ .monthly-clan-row>strong{font-size:9px}
+}
