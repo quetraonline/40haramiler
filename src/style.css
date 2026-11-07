@@ -219,3 +219,31 @@ footer span{letter-spacing:.2em}
  .hero-actions .btn{width:100%}
  .auth-actions .btn{gap:4px}
 }
+
+/* Live top-10 clan ranking */
+.clans-panel{overflow:hidden}
+.clans-panel>.section-heading .muted{margin:7px 0 0;padding:0;font-size:10px}
+.clan-ranking-toolbar{display:flex;align-items:center;gap:14px;padding:12px 15px;color:#98a8b1;font-size:10px;border-bottom:1px solid #273944}
+.clan-ranking-toolbar>span:first-child{margin-right:auto;color:#d5c59f}
+.clan-ranking-toolbar .btn{padding:8px 11px;font-size:9px}
+.clan-table-wrap{max-height:560px;overflow:auto;margin:0 14px 13px;border:1px solid #2b3e49;border-radius:3px}
+.clan-table{width:100%;min-width:760px;border-collapse:collapse;font-size:11px}
+.clan-table th{position:sticky;top:0;z-index:1;background:#1c2a34;color:#d9bf8e;text-align:left;padding:12px 11px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.clan-table td{padding:12px 11px;border-top:1px solid #263741;color:#c6d0d4;white-space:nowrap}
+.clan-table tbody tr:nth-child(even){background:#111a21}
+.clan-table tbody tr:hover{background:#1e2b34}
+.clan-rank{width:55px;color:#d9b878!important;font-weight:800}
+.clan-rank strong{color:#f0cc81;font-size:13px}
+.clan-name{font-weight:800;color:#f0ede5!important}
+.clan-name small{display:block;color:#d9b878;font-size:8px;letter-spacing:.13em;margin-top:3px}
+.clan-members-count{font-variant-numeric:tabular-nums;text-align:center}
+.clan-points{color:#e0be7c!important;font-weight:700;font-variant-numeric:tabular-nums}
+.clan-table .our-clan{background:rgba(158,124,68,.2)!important;box-shadow:inset 3px 0 #d5b171}
+.clans-panel .ranking-source{margin-left:15px}
+@media(max-width:760px){
+ .clan-ranking-toolbar{flex-wrap:wrap;gap:8px;padding:10px}
+ .clan-ranking-toolbar>span:first-child{width:100%;margin:0}
+ .clan-ranking-toolbar .btn{margin-left:auto}
+ .clan-table-wrap{margin:0 9px 12px}
+ .clan-table{font-size:10px}
+}
