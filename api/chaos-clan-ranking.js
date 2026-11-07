@@ -2,8 +2,8 @@ const SOURCE_URL = 'https://www.nowaonlineworld.com/en/chaos-zone-clan-ranking';
 
 function clean(value = '') {
   return value
-    .replace(/<script\\b[\\s\\S]*?<\\/script>/gi, ' ')
-    .replace(/<style\\b[\\s\\S]*?<\\/style>/gi, ' ')
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
     .replace(/<[^>]*>/g, ' ')
     .replace(/&nbsp;|&#160;/gi, ' ')
     .replace(/&amp;/gi, '&')
@@ -11,35 +11,35 @@ function clean(value = '') {
     .replace(/&#39;|&apos;/gi, "'")
     .replace(/&lt;/gi, '<')
     .replace(/&gt;/gi, '>')
-    .replace(/\\s+/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
 function parseWarPoints(value = '') {
-  const match = clean(value).match(/[\\d][\\d,\\.\\s]*\\s*WP\\b/i);
-  return match ? Number(match[0].replace(/[^\\d]/g, '')) : 0;
+  const match = clean(value).match(/[\d][\d,.\s]*\s*WP\b/i);
+  return match ? Number(match[0].replace(/[^\d]/g, '')) : 0;
 }
 
 function parseClans(html = '') {
-  const rows = [...html.matchAll(/<tr\\b[^>]*>([\\s\\S]*?)<\\/tr>/gi)];
+  const rows = [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
   const clans = [];
 
   for (const rowMatch of rows) {
-    const cells = [...rowMatch[1].matchAll(/<t[dh]\\b[^>]*>([\\s\\S]*?)<\\/t[dh]>/gi)]
+    const cells = [...rowMatch[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)]
       .map((cell) => cell[1]);
 
     if (cells.length < 7) continue;
 
     const rankText = clean(cells[0]);
-    const rankMatch = rankText.match(/#?\\s*(\\d{1,3})\\b/);
+    const rankMatch = rankText.match(/#?\s*(\d{1,3})\b/);
     if (!rankMatch) continue;
 
     const raceMarkup = cells[1] || '';
-    const raceMatch = raceMarkup.match(/<img\\b[^>]*\\balt=["']([^"']+)["'][^>]*>/i);
+    const raceMatch = raceMarkup.match(/<img\b[^>]*\balt=["']([^"']+)["'][^>]*>/i);
     const race = raceMatch ? clean(raceMatch[1]) : clean(raceMarkup);
     const clan = clean(cells[2]);
     const leader = clean(cells[3]);
-    const memberCount = Number(clean(cells[4]).replace(/[^\\d]/g, '')) || 0;
+    const memberCount = Number(clean(cells[4]).replace(/[^\d]/g, '')) || 0;
     const totalWarPoints = parseWarPoints(cells[5]);
     const donateWarPoints = parseWarPoints(cells[6]);
 
@@ -76,14 +76,14 @@ export default async function handler(req, res) {
     });
 
     if (!upstream.ok) {
-      throw new Error(`Nowa klan sıralaması HTTP ${upstream.status} yanıtı verdi.`);
+      throw new Error(\`Nowa klan sıralaması HTTP \${upstream.status} yanıtı verdi.\`);
     }
 
     const html = await upstream.text();
     const clans = parseClans(html);
 
     if (clans.length !== 10) {
-      throw new Error(`Kaynak sayfadan ilk 10 klan okunamadı (bulunan: ${clans.length}). Sayfa yapısı değişmiş olabilir.`);
+      throw new Error(\`Kaynak sayfadan ilk 10 klan okunamadı (bulunan: \${clans.length}). Sayfa yapısı değişmiş olabilir.\`);
     }
 
     res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
