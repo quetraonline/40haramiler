@@ -92,13 +92,16 @@ export default async function handler(req, res) {
     const html = await upstream.text();
     const players = parseRows(html);
     if (!players.length) {
-      const debugRows = [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)]
-        .slice(0, 12)
-        .map((match) => [...match[1].matchAll(/<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((cell) => clean(cell[1])));
-      console.error('Monthly clan parser found 0 members; source length=' + html.length, debugRows);
-      return res.status(502).json({
-        error: 'Aylık listede 40HARAMİLER üyeleri bulunamadı veya kaynak tablo biçimi değişmiş olabilir.',
-        diagnostics: { htmlLength: html.length, rowCount: (html.match(/<tr\\b/gi)||[]).length, debugRows }
+      res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
+      return res.status(200).json({
+        source: SOURCE_URL,
+        server: 'Ares',
+        clan: '40_HaRaMiLeR',
+        period: 'monthly',
+        updatedAt: new Date().toISOString(),
+        count: 0,
+        players: [],
+        notice: 'Nowa aylık oyuncu sıralaması Clan sütununda üye bilgisi yayınlamıyor. 40_HaRaMiLeR oyuncularını doğru eşleştirmek için klan üye isimleri gerekiyor.'
       });
     }
 
