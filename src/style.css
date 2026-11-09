@@ -310,3 +310,354 @@ footer span{letter-spacing:.2em}
  .monthly-clan-player>b{font-size:10px}
  .monthly-clan-row>strong{font-size:9px}
 }
+
+
+/* ===== 40HARAMİLER // ARES CLAN REALM REDESIGN ===== */
+:root{
+ --ko-gold:#e0bd79;
+ --ko-gold-soft:#b4935d;
+ --ko-steel:#263943;
+ --ko-deep:#080d12;
+ --ko-panel:#121c24;
+ --ko-line:rgba(203,173,117,.32);
+}
+body{
+ background:
+  radial-gradient(ellipse at 50% -10%,rgba(146,91,45,.23),transparent 40rem),
+  radial-gradient(ellipse at 92% 45%,rgba(44,69,84,.14),transparent 32rem),
+  linear-gradient(180deg,#0a0f14 0%,#070a0e 100%);
+ color:#f2eee5;
+}
+.site{max-width:1660px;padding:0 30px}
+.masthead{
+ min-height:104px;height:auto;overflow:hidden;isolation:isolate;
+ border:1px solid rgba(210,177,116,.38);border-top:3px solid #b28d55;
+ background:linear-gradient(110deg,#19252e 0%,#0b1117 52%,#201b17 100%);
+ box-shadow:0 17px 44px rgba(0,0,0,.48);
+}
+.masthead:before{
+ content:"";position:absolute;z-index:-1;inset:0;opacity:.8;
+ background:radial-gradient(ellipse at 15% 0%,rgba(168,119,59,.2),transparent 38%),linear-gradient(90deg,transparent 58%,rgba(124,48,39,.12));
+}
+.masthead:after{
+ content:"";position:absolute;right:-95px;top:-150px;width:390px;height:390px;
+ border:1px solid rgba(221,189,130,.12);transform:rotate(45deg);
+ box-shadow:0 0 0 24px rgba(221,189,130,.02),0 0 0 58px rgba(221,189,130,.015);
+ pointer-events:none;
+}
+.topline{min-height:82px;padding:13px 3%;position:relative;z-index:1}
+.brand-lockup{gap:15px}
+.brand-symbol{
+ width:53px;height:57px;border-radius:0;
+ clip-path:polygon(12% 0,88% 0,100% 16%,96% 70%,50% 100%,4% 70%,0 16%);
+ background:linear-gradient(145deg,#f1dba5,#a67f49 50%,#49331f);
+ color:#11171c;font:900 19px Cinzel;filter:drop-shadow(0 5px 9px #0009);
+}
+.brand-lockup .brand-kicker{color:#aebdc4;font-size:8px;letter-spacing:.29em}
+.brand-lockup .brand-name{font-size:24px;letter-spacing:.12em;color:#f0d7a4;text-shadow:0 2px 18px #d6b77722}
+.masthead-caption{
+ display:flex;align-items:center;gap:10px;
+ padding:0 3% 12px calc(3% + 68px);
+ color:#a9b6bc;font-size:8px;font-weight:800;letter-spacing:.24em;
+}
+.masthead-caption i{width:4px;height:4px;border-radius:50%;background:#d6b777;box-shadow:0 0 8px #d6b77788}
+.nav{
+ position:sticky;top:0;z-index:30;margin:0 0 20px;
+ border:1px solid rgba(203,173,117,.38);border-top:0;border-radius:0 0 3px 3px;
+ background:rgba(8,13,18,.94);backdrop-filter:blur(16px);
+ box-shadow:0 10px 28px #0008;
+}
+.navlinks{gap:2px;padding:0 10px}
+.navlinks a{
+ min-height:51px;padding:0 15px;border-bottom:2px solid transparent;
+ color:#c0c9cc;font-size:9px;font-weight:800;letter-spacing:.13em;
+}
+.navlinks a svg{color:#d2b477;width:15px;height:15px}
+.navlinks a:hover{color:#fff4db;background:linear-gradient(180deg,transparent,#cfaa671a);border-bottom-color:#d7b675}
+.btn{
+ min-height:37px;padding:9px 14px;border-radius:2px;
+ border:1px solid #746d5d;background:linear-gradient(180deg,#2a3942,#141e26);
+ color:#f0e9dc;font-size:9px;font-weight:800;letter-spacing:.1em;
+ box-shadow:inset 0 1px #ffffff10,0 4px 12px #0005;
+}
+.btn.red{background:linear-gradient(180deg,#a24c3f,#6f2524);border-color:#bd795b;color:#fff0dc}
+.btn.outline{background:#090e13aa;border-color:#9d8153;color:#ead5a9}
+.btn.ghost{background:#090e13aa;border-color:#52616b;color:#dce1e0}
+
+/* The fortress gate hero */
+.hero{
+ height:clamp(485px,42vw,595px);min-height:485px;
+ margin-bottom:17px;border:1px solid rgba(211,175,111,.58);border-radius:2px;
+ background:
+  linear-gradient(90deg,rgba(3,7,11,.94) 0%,rgba(5,10,14,.83) 36%,rgba(5,10,14,.34) 72%,rgba(5,10,14,.54) 100%),
+  linear-gradient(0deg,rgba(4,7,10,.78),transparent 45%),
+  url('/ares-fortress.jpg') center 46%/cover no-repeat,
+  linear-gradient(135deg,#34434d,#111a20);
+ box-shadow:0 25px 60px #0009,inset 0 0 100px #0004;
+}
+.hero:before{
+ content:"";position:absolute;z-index:0;inset:13px;border:1px solid rgba(221,190,132,.36);
+ pointer-events:none;
+}
+.hero:after{
+ content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
+ background:radial-gradient(ellipse at 77% 42%,transparent 0 20%,#060a0d33 55%,#05090d80 100%);
+}
+.hero-content{max-width:760px;padding:42px 6.5%;z-index:2}
+.eyebrow{color:#e2c58a;font-size:9px;letter-spacing:.32em}
+.hero h1{
+ margin:21px 0 17px;color:#f7f1e6;
+ font:900 clamp(39px,5vw,72px)/1.05 Cinzel,serif;
+ text-shadow:0 5px 25px #000;
+}
+.hero h1 em{color:#e6c47d;text-shadow:0 2px 24px #000}
+.hero p{max-width:540px;color:#d2d9d9;font-size:13px;line-height:1.9;text-shadow:0 2px 7px #000}
+.hero-actions{gap:11px;margin-top:29px}
+.hero-actions .btn{min-height:43px;padding:12px 18px}
+.hero-crest{
+ width:clamp(195px,21vw,300px);height:clamp(230px,25vw,345px);
+ right:13%;top:13%;border-radius:0;
+ clip-path:polygon(8% 0,92% 0,100% 10%,96% 72%,50% 100%,4% 72%,0 10%);
+ border:1px solid rgba(223,190,126,.7);
+ background:linear-gradient(145deg,#09111733,#050a0eb3);
+ box-shadow:0 0 0 9px #d9b57510,0 0 70px #0007;
+}
+.hero-crest:before{inset:12px 14px 18px;border:1px solid #e1c28b88}
+.hero-crest:after{inset:28px;border-top:1px solid #e1c28b55;border-bottom:1px solid #e1c28b55}
+.hero-crest span{font-size:17px;letter-spacing:.34em}
+.hero-crest b{font-size:clamp(86px,10vw,140px);color:#f0d7a0}
+.hero-crest small{font-size:8px;letter-spacing:.3em}
+.hero-bottomline{
+ padding:14px 24px;background:#050a0ed9;border-top:1px solid #d8b16a55;
+ color:#b8c3c7;font-size:8px;font-weight:800;letter-spacing:.2em;
+}
+.quick-stats{
+ margin:0 0 22px;border:1px solid rgba(194,157,96,.38);
+ background:linear-gradient(100deg,#17222b,#0c1218 58%,#1d1c18);
+ box-shadow:0 12px 28px #0007;
+}
+.quick-stats>div{padding:16px 20px;border-right:1px solid #c4ab7b20}
+.quick-icon{
+ width:39px;height:41px;border-radius:0;flex-shrink:0;
+ clip-path:polygon(12% 0,88% 0,100% 16%,96% 72%,50% 100%,4% 72%,0 16%);
+ border:0;background:linear-gradient(145deg,#b28d5538,#101a21);
+ color:#e8cb90;outline:1px solid #c9a46a;
+}
+.quick-stats small{color:#9eabb1;font-size:7px;letter-spacing:.17em}
+.quick-stats b{color:#f0e6d3;font:700 11px Cinzel;letter-spacing:.05em}
+.columns{grid-template-columns:minmax(225px,.86fr) minmax(420px,1.75fr) minmax(245px,.9fr);gap:17px}
+.leftcol,.centercol,.rightcol{gap:17px}
+.panel{
+ background:linear-gradient(145deg,#18232c,#0c1319 78%);
+ border:1px solid rgba(165,179,183,.22);border-radius:2px;
+ box-shadow:0 9px 26px #0007,inset 0 1px #ffffff08;
+}
+.panel:before{border-top:1px solid #d6b77722}
+.section-heading{
+ padding:16px 17px 14px;
+ border-bottom:1px solid #b9945c3d;
+ background:linear-gradient(90deg,#795a351e,#26364055 55%,#0e151b44);
+}
+.section-heading:after{content:"";position:absolute;left:17px;bottom:-1px;width:50px;height:1px;background:#d5b576}
+.section-heading>span{color:#c4ac7d;font-size:7px;letter-spacing:.24em}
+.panel h2,.section-heading h2{color:#f1eadc;font-size:14px;letter-spacing:.025em}
+.panel h2 svg,.section-heading h2 svg{color:#dfbd7c}
+.admin-person{
+ margin:10px;background:linear-gradient(110deg,#1a2831,#10181f);
+ border:1px solid #c4a36b33;border-radius:2px;padding:11px;
+}
+.avatar{
+ width:40px;height:42px;border-radius:0;
+ clip-path:polygon(10% 0,90% 0,100% 15%,94% 72%,50% 100%,6% 72%,0 15%);
+ background:radial-gradient(circle at 50% 22%,#74838a,#1a2730 72%);
+ border:1px solid #bd985c;color:#f1d49e;
+}
+.avatar.alt{background:radial-gradient(circle at 50% 22%,#866257,#1e2326 72%)}
+.admin-person b{color:#f4eddf;font:700 12px Cinzel}
+.admin-person small{background:#324653;color:#efd8a5;border-radius:1px}
+.stat{border-color:#c0cbd00f;color:#b6c2c6}
+.stat b{color:#f0eee7}
+.news-panel{padding-bottom:13px}
+.news-grid{gap:11px;padding:13px}
+.news-card{background:linear-gradient(145deg,#1a2730,#0d141a);border:1px solid #a2b2b622;border-radius:2px}
+.news-card:hover{border-color:#d3b47588;box-shadow:0 10px 26px #0007}
+.news-art{
+ height:112px;isolation:isolate;
+ background:
+  radial-gradient(circle at 80% 24%,#d2aa6b55,transparent 22%),
+  linear-gradient(120deg,#09111722,#091117bd),
+  repeating-linear-gradient(135deg,transparent 0 20px,#e1e8e811 21px 22px),
+  linear-gradient(130deg,#50636d,#1d2e39 52%,#10171d);
+}
+.news-art:after{border-color:#d7b67588;box-shadow:0 0 0 8px #d7b67512}
+.news-art span{color:#f1d69e;font:900 27px Cinzel}
+.news-art b{color:#d7e0e2;font-size:7px;letter-spacing:.22em}
+.news-card-copy{padding:12px;min-height:134px}
+.news-card-copy time{color:#d7b779;font-size:8px}
+.news-card-copy>b{color:#f2eee6;font-size:11px}
+.news-card-copy p{color:#abb8be;font-size:9px;line-height:1.65}
+.class-grid{gap:9px;padding:13px}
+.class-card{
+ min-height:117px;border:1px solid #c5a66b55;border-radius:2px;
+ box-shadow:inset 0 0 28px #0005;
+}
+.class-card b{font:800 12px Cinzel;letter-spacing:.1em}
+.class-card small{font-size:7px;letter-spacing:.16em;color:#e0c99e}
+.class-card.warrior{background:radial-gradient(ellipse at 82% 18%,#b25d3b55,transparent 36%),linear-gradient(145deg,#69483a,#1d2c35 66%,#10171c)}
+.class-card.rogue{background:radial-gradient(ellipse at 82% 18%,#8eb0a055,transparent 36%),linear-gradient(145deg,#405a55,#1b2c31 66%,#10171c)}
+.class-card.mage{background:radial-gradient(ellipse at 82% 18%,#9685c255,transparent 36%),linear-gradient(145deg,#51456b,#252439 66%,#10171c)}
+.class-card.priest{background:radial-gradient(ellipse at 82% 18%,#d5b87855,transparent 36%),linear-gradient(145deg,#6b6041,#303027 66%,#10171c)}
+.login-panel{padding-bottom:14px}
+.login-panel input,.modal input,.admin-forms input,.admin-forms textarea{
+ background:#090f14;border:1px solid #52616a;border-radius:2px;color:#f1f0e9;
+}
+.login-panel input:focus,.modal input:focus,.admin-forms input:focus,.admin-forms textarea:focus{
+ border-color:#d1ad6f;box-shadow:0 0 0 2px #d1ad6f20;
+}
+.monthly-clan-panel .section-heading h2{font-size:12px}
+.monthly-clan-row{
+ background:linear-gradient(105deg,#1a2932,#0d151c);
+ border:1px solid #a9bbc124;border-radius:2px;
+}
+.monthly-clan-rank{background:linear-gradient(145deg,#394852,#17242c);border:1px solid #b5945c;color:#f4daa0}
+.monthly-clan-player>b{font-size:10px;color:#fff4e2}
+.monthly-clan-player>small{color:#b8c5ca}
+.monthly-clan-row>strong{color:#f0d18e}
+.clan-mini-row{background:linear-gradient(105deg,#1a2932,#101920);border-color:#a7bac025}
+.clan-mini-row.our-clan{background:linear-gradient(110deg,#92672c55,#30271d88)!important;border-color:#c19a5e;box-shadow:inset 3px 0 #e5c47e}
+.clan-mini-rank{background:linear-gradient(145deg,#40505a,#17232c);border-color:#ae905d;color:#f3dba2}
+.clan-mini-details>b{color:#fff5e3;font-size:12px}
+.clan-mini-details>small{color:#bfcbcf}
+.join-panel{background:linear-gradient(145deg,#33271c,#151d22 70%);border-color:#c09a5e66}
+.join-panel h3{color:#f0d49b}
+.join-panel p{color:#bec8c9}
+.ranking-heading{padding-right:17px}
+.ranking-controls input,.ranking-controls select{
+ background:#090f14;border:1px solid #53646e;border-radius:2px;color:#ecede8;
+}
+.ranking-controls input:focus,.ranking-controls select:focus{border-color:#d1ae70}
+.ranking-table-wrap{border-color:#9bb0b633;border-radius:2px}
+.ranking-table th{background:linear-gradient(180deg,#2d414c,#1a2932);color:#f0d69e;border-bottom:1px solid #c29b5b}
+.ranking-table td{color:#cbd3d4;border-color:#a9b9bc18}
+.ranking-table tbody tr:nth-child(even){background:#ffffff05}
+.ranking-table tbody tr:hover{background:#caa35a18}
+.ranking-table .rank-number,.ranking-table .rank-wp{color:#f1cf89}
+.ranking-table .our-player{background:#956e3044!important;box-shadow:inset 3px 0 #e4c17a}
+.about-panel{background:linear-gradient(145deg,#192833,#0c141a)}
+.about-signature{color:#e3c38a}
+footer{
+ background:linear-gradient(180deg,#131e2600,#141e27aa);
+ border-top:1px solid #d0aa6b55;color:#9cabb1;
+}
+footer b{color:#e9ce95;font:900 23px Cinzel;letter-spacing:.13em}
+footer span{color:#b9c4c6}
+.footer-links a{color:#bec9ca}
+.footer-oath{color:#d6b777;font:800 8px Cinzel;letter-spacing:.25em}
+.modal{background:linear-gradient(145deg,#23323b,#0c141b);border:1px solid #b18d57;border-radius:2px}
+.modal:before{border:1px solid #d7b67533}
+.modal h2{color:#f0d6a2}
+.modal .close{background:#111c24;border:1px solid #7d8a8d;color:#e8ce98}
+.toast{background:#1d303a;border:1px solid #c19b60;border-radius:2px;color:#f0e8d7}
+
+/* Responsive layouts */
+@media(max-width:1120px){
+ .site{padding:0 20px}
+ .columns{grid-template-columns:minmax(210px,.82fr) minmax(0,1.7fr)}
+ .rightcol{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+ .hero-crest{right:6%;opacity:.72}
+ .quick-stats>div{padding:14px}
+}
+@media(max-width:760px){
+ .site{padding:0 9px}
+ .topline{min-height:69px;padding:9px 12px;gap:9px}
+ .brand-lockup{gap:9px}
+ .brand-symbol{width:39px;height:43px;font-size:14px}
+ .brand-lockup .brand-name{font-size:16px;letter-spacing:.07em}
+ .brand-lockup .brand-kicker{font-size:6px;letter-spacing:.16em}
+ .auth-actions{gap:4px}
+ .auth-actions .btn{min-height:31px;padding:6px 7px;font-size:7px;letter-spacing:.03em}
+ .welcome{display:none}
+ .masthead-caption{gap:6px;padding:0 10px 8px 60px;font-size:6px;letter-spacing:.12em}
+ .nav{margin-bottom:12px}
+ .mobile-menu{display:flex;align-items:center;width:100%;min-height:40px;padding:8px 12px}
+ .mobile-menu:after{content:"KLAN MENÜSÜ";font-size:8px;font-weight:800;letter-spacing:.16em;margin-left:9px;color:#cfb47f}
+ .navlinks{display:none;flex-direction:column;padding:0}
+ .navlinks.open{display:flex}
+ .navlinks a{justify-content:flex-start;min-height:40px;padding:9px 14px;border-bottom:1px solid #bda06b22;font-size:8px}
+ .hero{height:470px;min-height:0;margin-bottom:12px;background-position:58% center}
+ .hero-content{max-width:100%;padding:36px 18px 102px}
+ .eyebrow{font-size:7px;letter-spacing:.2em}
+ .hero h1{font-size:clamp(29px,8vw,41px);line-height:1.1;margin:17px 0 12px}
+ .hero p{font-size:10px;line-height:1.7;max-width:390px}
+ .hero-actions{gap:7px;margin-top:18px}
+ .hero-actions .btn{min-height:36px;padding:8px 10px;font-size:7px}
+ .hero-crest{width:137px;height:166px;right:7px;top:auto;bottom:56px;opacity:.43}
+ .hero-crest b{font-size:67px}
+ .hero-crest span{font-size:10px}
+ .hero-crest small{font-size:6px;margin-top:6px}
+ .hero-bottomline{padding:9px 10px;font-size:6px;letter-spacing:.09em}
+ .quick-stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:13px}
+ .quick-stats>div{gap:8px;padding:10px 8px;border-bottom:1px solid #c4ab7b20}
+ .quick-stats>div:nth-child(2){border-right:0}
+ .quick-stats>div:nth-child(n+3){border-bottom:0}
+ .quick-icon{width:29px;height:31px}
+ .quick-icon svg{width:14px;height:14px}
+ .quick-stats small{font-size:6px;letter-spacing:.1em}
+ .quick-stats b{font-size:8px}
+ .columns{display:flex;flex-direction:column;gap:12px}
+ .leftcol,.centercol,.rightcol{display:flex;flex-direction:column;width:100%;gap:12px}
+ .section-heading{padding:12px 12px 11px}
+ .section-heading>span{font-size:6px}
+ .panel h2,.section-heading h2{font-size:12px}
+ .admin-person{margin:8px;padding:9px}
+ .clan-mini-list{padding:8px}
+ .clan-mini-row{grid-template-columns:29px minmax(0,1fr);padding:8px;gap:7px}
+ .clan-mini-rank{width:28px;height:30px}
+ .clan-mini-details>b{font-size:10px}
+ .clan-mini-details>small{font-size:7px}
+ .news-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:8px;gap:7px}
+ .news-art{height:76px;padding:8px}
+ .news-art span{font-size:19px}
+ .news-art b{font-size:6px}
+ .news-card-copy{padding:8px;min-height:116px}
+ .news-card-copy>b{font-size:8px}
+ .news-card-copy p{font-size:7px}
+ .class-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:8px}
+ .class-card{min-height:88px;padding:8px}
+ .class-card b{font-size:10px}
+ .ranking-heading{align-items:flex-start;padding-right:8px}
+ .ranking-heading .section-heading{padding:12px}
+ .ranking-heading>.btn{margin:10px 0 0;padding:6px;font-size:7px}
+ .ranking-controls{grid-template-columns:1fr 1fr;padding:0 8px 9px;gap:6px}
+ .ranking-controls input{grid-column:1/-1}
+ .ranking-controls input,.ranking-controls select{font-size:8px}
+ .ranking-table-wrap{margin:0 8px}
+ .ranking-meta{font-size:7px;padding:7px 9px}
+ .monthly-ranking-toolbar{gap:6px}
+ .monthly-ranking-toolbar>span:first-child{width:100%;margin:0}
+ .monthly-ranking-toolbar .btn{margin-left:auto}
+ .monthly-clan-list{max-height:410px;padding:7px}
+ .monthly-clan-row{grid-template-columns:25px minmax(0,1fr) auto;gap:5px;padding:6px}
+ .monthly-clan-rank{width:24px;height:25px;font-size:9px}
+ .monthly-clan-player>b{font-size:8px}
+ .monthly-clan-player>small{font-size:6px}
+ .monthly-clan-row>strong{font-size:7px}
+ .about-panel>p{padding:0 12px}
+ .about-signature{margin:4px 12px 0;font-size:7px;letter-spacing:.12em}
+ .admin-forms{grid-template-columns:1fr;padding:11px}
+ footer{margin-top:21px;padding:22px 8px}
+ footer b{font-size:18px}
+ footer span{font-size:6px;letter-spacing:.13em}
+ .footer-links{gap:11px}
+ .footer-links a{font-size:7px}
+}
+@media(max-width:400px){
+ .site{padding:0 7px}
+ .brand-lockup .brand-name{font-size:14px}
+ .brand-lockup .brand-kicker{font-size:5px}
+ .auth-actions .btn{padding:6px 5px}
+ .hero-actions{flex-direction:column;align-items:stretch;max-width:240px}
+ .hero-actions .btn{width:100%}
+ .news-grid{grid-template-columns:1fr}
+ .news-art{height:88px}
+}
